@@ -14,6 +14,7 @@ public class DemoEntity {
     private String deName;
     private String deAge;
     private String deSex;
+    private DemoEntitySon demoEntitySon;
 
 
     public DemoEntity() {
@@ -132,4 +133,11 @@ public class DemoEntity {
         this.deSex = deSex;
     }
 
+    public DemoEntitySon getDemoEntitySon() {
+        return demoEntitySon;
+    }
+
+    public void setDemoEntitySon(DemoEntitySon demoEntitySon) {
+        this.demoEntitySon = demoEntitySon;
+    }
 }
