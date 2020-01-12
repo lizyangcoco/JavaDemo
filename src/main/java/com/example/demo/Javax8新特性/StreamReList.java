@@ -96,4 +96,20 @@ public class StreamReList {
             }
         }).collect(Collectors.toList());
     }
+
+
+    private void testLambda() {
+        List list = new ArrayList();
+        //循环此list
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("for循环");
+        }
+        for (Object o : list) {
+            System.out.println("forEach循环");
+        }
+        //这里我们的lambda登场了
+        list.forEach(s -> {
+            System.out.println("lambda表达式循环");
+        });
+    }
 }

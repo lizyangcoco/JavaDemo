@@ -1,6 +1,7 @@
 package com.example.demo.Javax8新特性;
 
 import com.example.demo.utils.DemoEntity;
+import com.example.demo.utils.DemoEntitySon;
 
 import java.util.Optional;
 
@@ -19,14 +20,47 @@ public class OptionalTest {
      */
     private String getDemoEntityDeName1(DemoEntity demoEntity) {
         if (demoEntity != null) {
-            return demoEntity.getDeName();
+            DemoEntitySon demoEntitySon = demoEntity.getDemoEntitySon();
+            if (demoEntitySon != null) {
+                String strName = demoEntitySon.getDeName();
+                if (strName != null) {
+                    return strName;
+                }
+            }
         }
         return null;
     }
 
     //改进写法
     private String getDemoEntityDeName2(DemoEntity demoEntity) {
-        return Optional.ofNullable(demoEntity).map(DemoEntity::getDeName).orElse(null);
+        return Optional.ofNullable(demoEntity)
+                .map(DemoEntity::getDemoEntitySon)
+                .map(DemoEntitySon::getDeName).orElse(null);
+    }
+
+    /**
+     * 场景二：
+     * 判断对象或者字符是否为空，为空返回false，非空true
+     */
+    private boolean getBoType1() {
+        String type = null;
+        if (type == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    //改进写法
+    private boolean getBoType2() {
+        String type = null;
+        return Optional.ofNullable(type).isPresent();
+        /**
+         * 源码：
+         * public boolean isPresent() {
+         *         return value != null;
+         *     }
+         */
     }
 
     //of方法源码
