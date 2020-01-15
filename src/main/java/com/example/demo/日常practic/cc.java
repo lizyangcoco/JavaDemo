@@ -2,10 +2,7 @@ package com.example.demo.日常practic;
 
 import com.example.demo.utils.DemoEntity;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**

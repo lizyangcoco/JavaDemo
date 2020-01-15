@@ -13,6 +13,6 @@ public class TestMain {
         //主动选择，算法策略
         OrdinaryEntity s = new OrdinaryEntity();//对象
 
-        s.selectAlgorithm();//保存方法
+        s.selectAlgorithm();//调用方法
     }
 }
