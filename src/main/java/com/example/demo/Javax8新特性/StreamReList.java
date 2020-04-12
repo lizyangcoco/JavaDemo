@@ -107,7 +107,8 @@ public class StreamReList {
         for (Object o : list) {
             System.out.println("forEach循环");
         }
-        //这里我们的lambda登场了
+        //这里我们的 lambda 登场了
+        //解决，option，stream，提出来的
         list.forEach(s -> {
             System.out.println("lambda表达式循环");
         });
