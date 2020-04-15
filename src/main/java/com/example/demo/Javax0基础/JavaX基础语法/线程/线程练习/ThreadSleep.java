@@ -1,4 +1,4 @@
-package com.example.demo.Javax0基础.JavaX基础语法.线程;
+package com.example.demo.Javax0基础.JavaX基础语法.线程.线程练习;
 
 /**
  * ThreadSleep 线程的休眠特点

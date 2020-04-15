@@ -69,7 +69,8 @@ public class StringBufferBuilder {
 
     /**
      * 1、String str1="demo" 和 String str2=new String("practic") 的区别？
-     * 答：1）存储的位置不同。String 是存储在常量池，new在堆中开辟空间。String str="demo"可能创建1个或不创建对象，先去常量池找是否存在，存在不创建，不存在创建。String str=new String("practic") 至少一个，必创tr2对象，"practic"同上一样。
+     * 答：1）存储的位置不同。String 是存储在常量池，new在堆中开辟空间。String str="demo"可能创建1个或不创建对象，先去常量池找是否存在，存在不创建，不存在创建。
+     * String str=new String("practic") 至少一个，必创tr2对象，"practic"同上一样。
      */
 
 }
