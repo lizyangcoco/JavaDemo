@@ -23,7 +23,7 @@ public interface Interface {
      * 场景二：
      * 实现类，可不用再手动实现，可默认实现
      */
-
+ 
     interface testInterfaceA {
         public default void save(Class<? extends Object> entityClass) {
 
