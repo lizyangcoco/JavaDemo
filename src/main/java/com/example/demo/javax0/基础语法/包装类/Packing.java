@@ -7,10 +7,15 @@ package com.example.demo.javax0.基础语法.包装类;
  * @author 李泽阳 on 2020/1/12 9:52
  */
 public class Packing {
+
+
     /**
      * 8中基本类型的对应包装类’
      * byte  short  int  long   double  float  boolean  char
      * Byte Short Integer Long Double  Float  Boolean  Character
+     *
+     *
+     *
      * 区别：（举例int，其余相同）
      * 1、int默认为0，integer默认为null
      * 2、int是java的基本数据类型，integer是int的包装类
@@ -18,27 +23,28 @@ public class Packing {
      */
 
     /**
-     * 场景一：
-     * 创建对应数据库的实体类字段
+     * 场景一：创建数据库实体类字段
      * 1、创建一个类型（type），对应数据库的一个字段
      * 2、注意：此存在严重问题，基本类型都默认有值。如int 默认为0
      * 3、那在进行数据库新增的时候，如果不填，则会默认为0。
      * 4、会产生严重的bug，应该改为包装类的引用类型
      */
-    //错误示范
-    private int type;//代表类型
-    //正确,设置为integer类型
+
+
+    // 错误
+    private int type;
+    // 正确
     private Integer typeT;
 
     /**
-     * 场景二：
-     * 自动装箱And自动拆箱
+     * 场景二： 自动装箱And自动拆箱
      */
     private void testBox() {
-        //原本转换方式
-        int t = 10;
-        Integer ct = new Integer(t);
-        int tt = ct.intValue();
+        // 原本转换方式
+        int init = 10;
+        Integer initTer = new Integer(init);
+        int tt = initTer.intValue();
+
         int i = 10;
         //自动装
         Integer c = i;

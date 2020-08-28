@@ -18,13 +18,16 @@ public class FileRecur {
         if (file == null || file.exists()) {
             return;
         }
+
         File[] listFiles = file.listFiles();
         for (File f : listFiles) {
+
             if (f.isDirectory()) {
                 parseFile(f);//递归循环
             } else {
                 f.delete();//删除文件
             }
+
         }
         file.delete();//删除文件夹
 

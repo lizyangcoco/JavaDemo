@@ -8,24 +8,25 @@ package com.example.demo.javax0.基础语法.接口多态;
  */
 public class Interface {
 
+
     interface testInterfaceA {
-        //同名抽象方法
+        // 同名抽象方法
         public void sleep();
     }
 
+
+    // 同名抽象方法[合并父类方法]
     interface testInterfaceB extends testInterfaceA {
-        //同名抽象方法[合并父类方法]
         public void sleep();
     }
 
+    // 同名抽象方法[合并父类方法]
     interface testInterfaceC extends testInterfaceB {
-        //同名抽象方法[合并父类方法]
         public void sleep();
     }
 
     /**
-     * 场景一：
-     * 接口的多继承，会将同类方法进行，合并
+     * 场景一：接口的多继承，会将同类方法进行，合并
      */
     interface testInterfaceD extends testInterfaceA, testInterfaceB, testInterfaceC {
 

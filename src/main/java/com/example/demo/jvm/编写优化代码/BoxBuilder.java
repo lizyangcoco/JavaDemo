@@ -32,7 +32,7 @@ public class BoxBuilder {
         h = builder.h;
         i = builder.i;
     }
-    //具体的建造者类
+    // 具体的建造者类
     public static class Builder {
         private String name;
         private String price;
@@ -46,18 +46,18 @@ public class BoxBuilder {
         private String h;
         private String i;
 
-        //基础构造方法
+        // 基础构造方法
         public Builder(String name, String price) {
             this.name = name;
             this.price = price;
         }
 
-        //建造方法返回
+        // 建造方法返回
         public BoxBuilder builder() {
             return new BoxBuilder(this);
         }
 
-        //具体的建造方法
+        // 具体的建造方法
         //...
         public Builder valueA(String value) {
             this.a = value;
@@ -83,7 +83,7 @@ public class BoxBuilder {
     }
 
     public static void main(String[] args) {
-        //创建前面为主类，后面为建造者类
+        // 创建前面为主类，后面为建造者类
         BoxBuilder builder = new Builder("name", "age")
                 .valueA("A").valueB("B").valueC("C").valueD("D").builder();
     }

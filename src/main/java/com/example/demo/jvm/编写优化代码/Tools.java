@@ -17,19 +17,19 @@ public class Tools {
      * todo 空返回，防止调用者多次判空
      */
     public static List get() {
-        //返回空集合，或者Map等等...
+        // 返回空集合，或者Map等等...
         return Collections.EMPTY_LIST;
-        //不建议返回null,方法调用者会进行多判断
-        //return null;
+        // 不建议返回null,方法调用者会进行多判断
+        // return null;
     }
 
-    //私有化构造器
+    // 私有化构造器
     private Tools() {
     }
 
 
     public static void main(String[] args) {
-        //私有化构造器，本类内私有可用
+        // 私有化构造器，本类内私有可用
         Tools tools = new Tools();
         Tools.get();
     }

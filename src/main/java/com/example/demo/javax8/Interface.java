@@ -7,11 +7,9 @@ package com.example.demo.javax8;
  */
 public interface Interface {
     /**
-     * 场景一：
-     * 公共类编写，不再只能在class内编写，interface也可以
-     * 外部调用：Interface.isEmpty
+     * 场景一： 公共类编写，不再只能在class内编写，interface也可以 外部调用：Interface.isEmpty
      */
-    public static boolean isEmpty(Object str) {
+    static boolean isEmpty(Object str) {
         if (!"".equals(str) && null != str) {
             return false;
         }
@@ -20,19 +18,18 @@ public interface Interface {
 
 
     /**
-     * 场景二：
-     * 实现类，可不用再手动实现，可默认实现
+     * 场景二：实现类，可不用再手动实现，可默认实现
      */
- 
+
     interface testInterfaceA {
-        public default void save(Class<? extends Object> entityClass) {
+        default void save(Class<? extends Object> entityClass) {
 
         }
     }
 
-    //实现方法
+    // 实现方法
     class interfaceClass implements testInterfaceA {
-        //在这里直接调用，而不用再进行接口的实现
+        // 在这里直接调用，而不用再进行接口的实现
         private void testSave() {
             save(null);
         }

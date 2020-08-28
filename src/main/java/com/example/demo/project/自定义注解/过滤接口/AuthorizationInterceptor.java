@@ -1,4 +1,4 @@
-package com.example.demo.project.自定义注解.注解过滤接口;
+package com.example.demo.project.自定义注解.过滤接口;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

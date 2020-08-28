@@ -17,14 +17,18 @@ public class ListArrayList {
      */
 
     private void testArrayList() {
-        //场景一：
+
+
+        /**
+         * 场景一：
+         */
         ArrayList arrayList = new ArrayList();
         arrayList.add(1);
         arrayList.add(2);
         arrayList.add(3);
         arrayList.add(4);
-        //源码：
-        //初始定义一个常量为10，默认数据elementData，add时创建
+
+        // 初始定义一个常量为10，默认数据elementData，add时创建
         /**
          * Default initial capacity.
          * private static final int DEFAULT_CAPACITY = 10;
@@ -45,8 +49,7 @@ public class ListArrayList {
 
 
         /**
-         * 场景二：
-         * add，remove，数组位后移动，速度较慢
+         * 场景二： add，remove，数组位后移动，速度较慢
          */
         Object oldValue = arrayList.remove(1);
        /* 源码：
@@ -62,12 +65,12 @@ public class ListArrayList {
 
             return oldValue;*/
 
-        arrayList.add(1, "add");//源码同上，直接移动拷贝
+        // 源码同上，直接移动拷贝
+        arrayList.add(1, "add");
 
 
         /**
-         * 场景三：
-         * 非安全线程，多线程操作时，可能会数据操作失误。
+         * 场景三：非安全线程，多线程操作时，可能会数据操作失误。
          */
         Object setOldValue = arrayList.set(2, "set");
         /*源码：

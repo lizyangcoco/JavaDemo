@@ -15,14 +15,14 @@ public class Hash_Table_Tree {
      * 3、非安全线程
      */
     public void hashMapTest() throws Exception {
-        //HasMap,为非安全线程，
-        //无序集合，
+        // HasMap,为非安全线程，
+        // 无序集合，
         Map<String, Object> map = new HashMap<>();
         map.put("k1", "v1");
         map.put("k2", "v2");
         map.put("k3", "v3");
         map.put("k4", "v4");
-        //将其变为安全线程
+        // 将其变为安全线程
         Collections.synchronizedMap(map);
     }
 
@@ -31,14 +31,13 @@ public class Hash_Table_Tree {
      * 2、唯一区别，有序排列
      */
     public void linkHashMapTest() throws Exception {
-        //HasMap,为非安全线程，
-        //无序集合，
+        // HasMap,为非安全线程，无序集合，
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("k1", "v1");
         map.put("k2", "v2");
         map.put("k3", "v3");
         map.put("k4", "v4");
-        //将其变为安全线程
+        // 将其变为安全线程
         Collections.synchronizedMap(map);
     }
 
@@ -50,7 +49,7 @@ public class Hash_Table_Tree {
      */
     public void hashTable() {
         Map<String, String> map = new Hashtable<>();
-        //全部实现了 synchronized 所以线程安全
+        // 全部实现了 synchronized 所以线程安全
         map.put("", "");
 
     }

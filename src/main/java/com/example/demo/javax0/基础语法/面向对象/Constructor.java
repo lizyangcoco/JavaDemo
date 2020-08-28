@@ -16,15 +16,14 @@ public class Constructor {
     }
 
     /**
-     * 场景一：
-     * 有参数，构造器，重写方法
+     * 场景一：有参数，构造器，重写方法
      */
     public Constructor(String name, String age)   {
         this.name = name;
         this.age = age;
     }
 
-    //用法：用于重写代码内的函数，用于代码测试
+    // 用法：用于重写代码内的函数，用于代码测试
     private void testConstructor() {
         Constructor constructor = new Constructor("name", "18");
     }

@@ -11,12 +11,12 @@ public class VarArgs {
      *
      */
 
-    //累加方法
+    // 累加方法
     static int sum(int first, int... args) {
         int sum = 0;
 
         if (args.length == 0) {
-            //进行异常处理
+            // 进行异常处理
         }
         for (int arg : args) {
             sum += arg;

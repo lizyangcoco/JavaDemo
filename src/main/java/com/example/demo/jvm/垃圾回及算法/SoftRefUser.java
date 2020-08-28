@@ -18,14 +18,13 @@ public class SoftRefUser {
      * 3、弱引用
      * 4、虚引用
      */
-    //软引用
+    UserDemo uSoft = new UserDemo();// =new是强引用对象
+    // 软引用
     public void soft() {
-
-        UserDemo uSoft = new UserDemo();//=new是强引用对象
         uSoft = null;//去掉强引用，确保实例只有userSoft的软引用
         SoftReference<UserDemo> userDemoSoftReference = new SoftReference<UserDemo>(uSoft);
         System.out.println(userDemoSoftReference.get());
-        System.gc();//全盘进行垃圾回收，业务开发代码的时候谨慎使用(时间长)
+        System.gc();// 全盘进行垃圾回收，业务开发代码的时候谨慎使用(时间长)
         System.out.println("GC回收后的...");
         System.out.println(userDemoSoftReference.get());//查看是否回收了数据
 
@@ -54,9 +53,8 @@ public class SoftRefUser {
     }
 
 
-    //弱引用
+    // 弱引用
     public void weak() {
-
         UserDemo uWeak = new UserDemo();//=new是强引用对象
         uWeak = null;//去掉强引用，确保实例只有userSoft的软引用
         SoftReference<UserDemo> userDemoSoftReference = new SoftReference<UserDemo>(uWeak);

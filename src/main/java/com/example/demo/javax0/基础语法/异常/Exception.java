@@ -1,26 +1,27 @@
 package com.example.demo.javax0.基础语法.异常;
 
-import javax.jws.WebService;
 
 /**
- * 异常 分为：运行异常，编译异常
+ * 异常分为：
+ * 运行异常
+ * 编译异常
  * 自定义异常的写法
  *
  * @author 李泽阳 on 2020/1/8 9:42
  */
 public class Exception {
     /**
-     * 场景一：
-     * 运行异常一般向上抛出，尤其为写公共接口等，
+     * 场景一：运行异常一般向上抛出，尤其为写公共接口等，
      * 例如：编写一个获取字符串数组内某个字符
      */
 
     public void ExceptionTest() {
         String[] strArr = {"1", "2", "3"};
         try {
-            //在这里进行，异常捕获
+            // 在这里进行，异常捕获
             String str = PrintArrayToString(strArr, 5);
             System.out.println("返回的字符是：" + str);
+
         } catch (java.lang.Exception e) {
             e.printStackTrace();
         }
@@ -35,16 +36,16 @@ public class Exception {
      * @throws java.lang.Exception
      */
     public String PrintArrayToString(String[] arrays, int sub) throws java.lang.Exception {
-        //在这里，便会存在数据越界问题，
-        //不予捕获处理，向上抛出异常
+
+        // 在这里，便会存在数据越界问题，
+        // 不予捕获处理，向上抛出异常
         String str = arrays[sub];
         return str;
     }
 
 
     /**
-     * 场景二：
-     * 自定义异常的写法
+     * 场景二：自定义异常的写法
      * 1、创建异常类继承RuntimeException，覆盖其中的方法
      * 2、在特定的条件下throw new 创建的异常，向上抛出
      */
@@ -58,8 +59,9 @@ public class Exception {
 
     }
 
-    //计算除法division,throws java.lang.Exception,除了自定义异常外，其余异常继续向上抛出
+    // 计算除法division,throws java.lang.Exception,除了自定义异常外，其余异常继续向上抛出
     private static int calculateDivision(int a, int b) throws java.lang.Exception {
+
         //在这里定义，自定义异常
         if (b == 0) {
             throw new customException("被除数不能为0");
@@ -68,7 +70,8 @@ public class Exception {
         return c;
     }
 
-    //继承运行异常，复写其中的方法
+
+    // 继承运行异常，复写其中的方法
     static class customException extends RuntimeException {
         public customException() {
             super();

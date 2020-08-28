@@ -20,7 +20,7 @@ public class cc {
 
     private List<String> getElementName() {
         List<Element> elementList = new ArrayList<>();
-        //获取elementList内，类Element的name集合
+        // 获取elementList内，类Element的name集合
         List<String> nameList = elementList.stream().
                 map(Element::getName).collect(Collectors.toList());
         return nameList;
@@ -44,7 +44,7 @@ public class cc {
         for (int i = 0; i < 5; i++) {
             test sql = new test();
             System.out.println(sql.toString());
-            //sql.append("我是第" + (i+1) + "个创建的对象");
+            // sql.append("我是第" + (i+1) + "个创建的对象");
             System.out.println(sql.hashCode());
         }
         System.out.println("结束！！！");
@@ -56,9 +56,9 @@ public class cc {
 
     }
 
-    //测试返回，判空处理
+    // 测试返回，判空处理
     private String testOptional(DemoEntity demoEntity) throws Exception {
-        //返回demoEntity 的name字段
+        // 返回demoEntity 的name字段
        /* if (demoEntity!=null){
             return demoEntity.getDeName();
         }*/

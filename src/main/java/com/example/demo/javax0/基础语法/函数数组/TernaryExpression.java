@@ -11,22 +11,27 @@ public class TernaryExpression {
 
     int source = 90;
 
-    //三元表达式
     public void operatorTest() {
         String type = "";
 
 
-        //场景一
+        /**
+         * 场景一:单if
+         */
         if (source > 85) {
             type = "A";
         } else {
             type = "B";
         }
-        //改进：三元表达式优化***数据类型***，由扣号内的数据确定
+
+        // 改进：三元表达式优化***数据类型***，由扣号内的数据确定
         type = source > 85 ? ("A") : ("B");
+        System.out.println(type);
 
 
-        //场景二
+        /**
+         * 场景二：多if
+         */
         if (source > 85) {
             type = "A";
         } else if (source > 75) {
@@ -34,7 +39,7 @@ public class TernaryExpression {
         } else {
             type = "C";
         }
-        //改进：三元表达式优化***数据类型***，由扣号内的数据确定
+        // 改进
         type = source > 85 ? ("A") : (source > 75 ? ("B") : ("C"));
 
     }

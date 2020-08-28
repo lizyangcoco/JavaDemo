@@ -66,8 +66,8 @@ public class Stack {
         size = size - 1;
         Object o = elements[size];
 
-        //如果不置空，对象的引用不对，造成引用报错
-        //elements[size] = null;//让GC回收掉
+        // 如果不置空，对象的引用不对，造成引用报错
+        // elements[size] = null;//让GC回收掉
         return o;
     }
 

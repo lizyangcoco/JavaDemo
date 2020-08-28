@@ -11,64 +11,80 @@ public class ListLinkedList {
 
     /**
      * 1、数据结构，双向链表存储结构
-     * 3、速度：add，remove，较快，get，，较慢
-     * 4、线程安全：不是安全线程
+     * 2、速度：add，remove，较快，get，，较慢
+     * 3、线程安全：不是安全线程
      */
     private void testLinkedList() {
+
+        LinkedList<Object> linkedList = new LinkedList<>();
+
+
+
         /**
-         * 场景一：
-         *add，remove双向链表插入，删除
+         * 场景一：add，remove双向链表插入，删除
          */
-        LinkedList linkedList = new LinkedList<>();
         linkedList.add("add");
-       /*源码：
-        void linkLast(E e) {
-            final LinkedList.Node<E> l = last; //上一个节点
-            final LinkedList.Node<E> newNode = new LinkedList.Node<>(l, e, null); //存储当前节点
-            last = newNode;                     //更新上一个节点为
-            if (l == null)
-                first = newNode;
-            else
-                l.next = newNode;
-            size++;
-            modCount++;
-        }*/
+        /**
+         * add源码：
+         *   void linkLast(E e) {
+         *         LinkedList.Node<E> l = this.last; //上一个节点
+         *         LinkedList.Node<E> newNode = new LinkedList.Node(l, e, (LinkedList.Node)null); //存储当前节点
+         *         this.last = newNode;         //更新上一个节点为
+         *         if (l == null) {
+         *             this.first = newNode;
+         *         } else {
+         *             l.next = newNode;
+         *         }
+         *
+         *         ++this.size;
+         *         ++this.modCount;
+         *     }
+         */
 
 
         /**
-         * 场景二：
-         * get查询较慢，双向链表查询
+         * 场景二： get查询较慢，双向链表查询
          */
         linkedList.get(1);
-       /*双向链表查询源码：
-        Node<E> node(int index) {
-            // assert isElementIndex(index);
-            if (index < (size >> 1)) {  //链表长度size>>1一位，index比size小
-                Node<E> x = first;
-                for (int i = 0; i < index; i++) //循环查询下标，获取节点
-                    x = x.next;//返回下一个节点
-                return x;
-            } else {
-                Node<E> x = last;
-                for (int i = size - 1; i > index; i--) //循环查询下标，获取节点
-                    x = x.prev;
-                return x;   //返回上一个节点
-            }
-    }*/
+        /**
+         * get源码：
+         *   LinkedList.Node<E> node(int index) {
+         *         LinkedList.Node x;
+         *         int i;
+         *         if (index < this.size >> 1) {  //链表长度size>>1一位，index比size小
+         *             x = this.first;
+         *             for(i = 0; i < index; ++i) { //循环查询下标，获取节点
+         *                 x = x.next; //返回下一个节点
+         *             }
+         *             return x;
+         *         } else {
+         *             x = this.last;
+         *
+         *             for(i = this.size - 1; i > index; --i) { //循环查询下标，获取节点
+         *                 x = x.prev;
+         *             }
+         *             return x; //返回上一个节点
+         *         }
+         *     }
+         */
+
 
         /**
-         * 场景三：
-         * 线程安全：非安全线程
+         * 场景三： 线程安全：非安全线程
          */
         linkedList.set(1, "set");
-       /*源码：无线程安全
-        public E set(int index, E element) {
-            checkElementIndex(index);
-            Node<E> x = node(index);
-            E oldVal = x.item;
-            x.item = element;
-            return oldVal;
-        }*/
+        /**
+         * 非安全线程：
+         *   public void set(E e) {
+         *             if (this.lastReturned == null) {
+         *                 throw new IllegalStateException();
+         *             } else {
+         *                 this.checkForComodification();
+         *                 this.lastReturned.item = e;
+         *             }
+         *         }
+         */
+
     }
 
 

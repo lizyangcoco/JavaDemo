@@ -27,18 +27,18 @@ public class SingleModel {
      */
     private String name;
     private String age;
-    //2、
+    // 2、
     private static SingleModel singleModel;
 
-    //1、私有化构造器:
-    //注意：一般开发中，如果要创建，设为public
+    // 1、私有化构造器:
+    // 注意：一般开发中，如果要创建，设为public
     private SingleModel() {
     }
 
-    //3、创建外部访问对象
+    // 3、创建外部访问对象
     public static SingleModel getInstance() {
         if (singleModel == null) {
-            //懒加载
+            // 懒加载
             return new SingleModel();
         }
         return singleModel;

@@ -6,18 +6,18 @@ package com.example.demo.jvm.泛型;
  */
 public class NeedGenerator {
 
-    //相加x和y
+    // 相加x和y
     public int addInt(int x, int y) {
         return x + y;
     }
 
-    //相加x和y
+    // 相加x和y
     public float addFloat(float x, float y) {
         return x + y;
     }
 
 
-    //采用泛型编写, 这里T继承的是共同的数据类型
+    // 采用泛型编写, 这里T继承的是共同的数据类型
     public <T extends Number> double add(T x, T y) {
         return x.doubleValue() + y.doubleValue();
     }

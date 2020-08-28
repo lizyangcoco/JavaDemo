@@ -15,8 +15,7 @@ public class OptionalTest {
 
 
     /**
-     * 场景一：
-     * 获得实体对象的某个值
+     * 场景一： 获得实体对象的某个值
      */
     private String getDemoEntityDeName1(DemoEntity demoEntity) {
         if (demoEntity != null) {
@@ -30,8 +29,7 @@ public class OptionalTest {
         }
         return null;
     }
-
-    //改进写法
+    // 改进写法
     private String getDemoEntityDeName2(DemoEntity demoEntity) {
         return Optional.ofNullable(demoEntity)
                 .map(DemoEntity::getDemoEntitySon)
@@ -39,8 +37,7 @@ public class OptionalTest {
     }
 
     /**
-     * 场景二：
-     * 判断对象或者字符是否为空，为空返回false，非空true
+     * 场景二：判断对象或者字符是否为空，为空返回false，非空true
      */
     private boolean getBoType1() {
         String type = null;
@@ -50,8 +47,7 @@ public class OptionalTest {
             return true;
         }
     }
-
-    //改进写法
+    // 改进写法
     private boolean getBoType2() {
         String type = null;
         return Optional.ofNullable(type).isPresent();
@@ -63,7 +59,7 @@ public class OptionalTest {
          */
     }
 
-    //of方法源码
+    // of方法源码
     private void testOf() {
         //这里一定会抛出异常
         DemoEntity demoEntity = null;
@@ -77,7 +73,7 @@ public class OptionalTest {
          */
     }
 
-    //OfNullable源码
+    // OfNullable源码
     private void testOfNullable() {
         DemoEntity demoEntity = null;
         Optional.ofNullable(demoEntity).orElse(null);

@@ -1,7 +1,5 @@
 package com.example.demo.javax0.基础语法.集合;
 
-import com.example.demo.javax0.基础语法.集合.entity.SetEntity;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +8,6 @@ import java.util.Set;
  * 1、无序性
  * 2、唯一性
  * 3、只允许有一个null
- *
  * @author 李泽阳 on 2020/1/15 9:29
  */
 public class SetCollection {
@@ -19,38 +16,37 @@ public class SetCollection {
      * set集合解析
      * 1、无序性
      * 2、唯一性
-     * 3、只允许有一个null
-     * 强制：写在开头的强制
+     * 3、只允许有一个null  强制：写在开头的强制
      * 1、只要重写equals方法，就必须重写hashCode
      * 2、set存储的是不重复对象，依据hashCode，equals进行判断，所以set必须重写。
      */
     public static void main(String[] args) {
         /**
-         * 场景一：
-         * 唯一性,及其处理方法，源码
+         * 场景一： 唯一性,及其处理方法，源码
          */
         Set<String> setStr = new HashSet<>();
         setStr.add("a");
         setStr.add("a");
         setStr.add("b");
-        //这里输出两个a已经去重
+        // 这里输出两个a已经去重
         System.out.println(setStr);
 
-        //接下来，创建一个set类
+
+        // 接下来，创建一个set类
         Set<SetEntity> setEntities = new HashSet<>();
         setEntities.add(new SetEntity("set1", 15));
         setEntities.add(new SetEntity("set1", 15));
         setEntities.add(new SetEntity("set3", 17));
         setEntities.add(new SetEntity("set4", 18));
         System.out.println(setEntities);
-        //上面的添加，并没有去掉重复的，？？？（输出后发现）
+        // 上面的添加，并没有去掉重复的，？？？（输出后发现）
         /**
          * 接着思考改进：
          * 对equals方法进行重载。可否实现，相同？
          * 对名称相同，年龄相同便认为相同
          */
         System.out.println(setEntities);
-        //发现并没有，去重，再对hashcode进行重写,直接返回1，发现去掉了重复？
+        // 发现并没有，去重，再对hashcode进行重写,直接返回1，发现去掉了重复？
         /**
          * add源码：
          * 在这里发现，拿到key之后，进行了hash(key)获取其key的hash值

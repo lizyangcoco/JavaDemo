@@ -24,6 +24,7 @@ public class Iterator {
          *                 iterator.remove();
          *             }
          *         }
+         *
          *         反例：
          *         List<String> list = new ArrayList<String>();
          *         list.add("1");
@@ -53,6 +54,7 @@ public class Iterator {
             }
         }
         System.out.println(forList);
+
         /**
          * 产生新问题：
          * 错误：运行便会发现：将b移除不完整，
@@ -74,8 +76,7 @@ public class Iterator {
 
 
         /**
-         * 场景二：
-         * foreach循环，的remove/add操作
+         * 场景二：foreach循环，的remove/add操作
          */
         List<String> forEach = new ArrayList<>();
         forEach.add("a");
@@ -127,9 +128,9 @@ public class Iterator {
          *         }
          *     }
          */
+
         /**
-         * 改进：
-         *
+         * 改进：删除数组元素
          */
         List<String> forEachIterator = new ArrayList<>();
         forEachIterator.add("a");
@@ -144,15 +145,15 @@ public class Iterator {
         }
 
         /**
-         * 场景三：
-         * 应用：倒序遍历
+         * 场景三： 应用：倒序遍历
          */
         List<String> forEachIteratorDown = new ArrayList<>();
         forEachIteratorDown.add("a");
         forEachIteratorDown.add("b");
         forEachIteratorDown.add("c");
+
         ListIterator<String> item = forEachIteratorDown.listIterator();
-        //这里需要先将指针移向最后一位，再进行倒叙
+        // 这里需要先将指针移向最后一位，再进行倒叙
         while (item.hasNext()) {
             item.next();
         }

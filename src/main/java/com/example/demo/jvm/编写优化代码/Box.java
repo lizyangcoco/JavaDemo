@@ -51,7 +51,7 @@ public class Box {
         this.price = price;
     }
 
-    /**
+     /**
      * 优化：使用Builder模式
      * todo 建造者模式----类BoxBuilder内
      */

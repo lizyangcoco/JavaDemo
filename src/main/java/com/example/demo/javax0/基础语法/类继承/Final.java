@@ -8,59 +8,61 @@ package com.example.demo.javax0.基础语法.类继承;
  */
 public class Final {
 
-    /*
-     * 场景一：
-     * 运用在局部变量上，变量上，数据不可再更改
-     * */
+    /**
+     * 场景一：运用在局部变量上，数据不可再更改
+     */
     private void testVariable() {
+
         for (int i = 0; ; i++) {
             final int variableK;
+            // variableK不可再更改
             variableK = 10;
-            //variableK不可再更改
         }
     }
 
-    /*
-     * 场景二：
-     * 运用在成员属性上，必须初始化定义值
-     * */
+
+    /**
+     * 场景二：运用在成员属性上，必须初始化定义值
+     */
     class testMembers {
-        private final String TEST_MEMBERS = "member";
+        private final String TEST_MEMBERS = "NUMBER_CODE";
 
     }
 
-    /*
-     *场景三：
-     * 运用在方法上，不可被子类重写
+
+    /**
+     * 场景三： 运用在方法上，不可被子类重写
      */
-    //父类
+    // 父类
     class testClassParent {
         public final void testClass() {
-            System.out.println("c");
+            System.out.println("isParent");
         }
     }
 
-    //子类
+
+    // 子类
     class testClassSon extends testClassParent {
-        //在这里不可被继承
+        // 继承不可被重写
         /*public void testClass() {
-            System.out.println("c");
+            System.out.println("isSon");
         }*/
     }
 
 
-    /*
-     *场景四：
-     * 运用在类上，类不可被继承
+
+
+    /**
+     * 场景四： 运用在类上，类不可被继承
      */
-    //父类
+    // 父类
     final class testClass {
         public final void testClass() {
             System.out.println("c");
         }
     }
-    //不可被继承
-    /*//子类
+
+    /*// 子类 不可被继承
     class testSon extends testClass {
     }*/
 

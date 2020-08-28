@@ -1,4 +1,4 @@
-package com.example.demo.javax0.基础语法.集合.entity;
+package com.example.demo.javax0.基础语法.集合;
 
 /**
  * @author 李泽阳 on 2020/1/15 10:23
@@ -6,12 +6,12 @@ package com.example.demo.javax0.基础语法.集合.entity;
 public class SetEntity {
     private String name;
     private Integer age;
-    //默认构造器
+    // 默认构造器
     public SetEntity() {
     }
 
 
-    //重写toString方法
+    // 重写toString方法
     @Override
     public String toString() {
         return "SetEntity{" +
@@ -20,13 +20,13 @@ public class SetEntity {
                 '}';
     }
 
-    //构造器
+    // 构造器
     public SetEntity(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
 
-    //重写equals方法，
+    // 重写equals方法，
     @Override
     public boolean equals(Object obj) {
         boolean isEq = false;
@@ -39,7 +39,7 @@ public class SetEntity {
         return isEq;
     }
 
-    //重写hashCode
+    // 重写hashCode
     @Override
     public int hashCode() {
         return 1;

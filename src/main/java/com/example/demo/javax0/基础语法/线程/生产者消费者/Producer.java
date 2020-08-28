@@ -1,5 +1,8 @@
 package com.example.demo.javax0.基础语法.线程.生产者消费者;
 
+import lombok.SneakyThrows;
+import lombok.Synchronized;
+
 import java.util.Date;
 
 /**
@@ -18,29 +21,25 @@ public class Producer extends Thread {
     }
 
     @Override
+    @SneakyThrows
     public void run() {
         while (true) {
             synchronized (basket) {
-                if (!basket.isEmpty()) { //线程池为false有线程进行等待
+
+                // 线程池为false有线程进行等待
+                if (!basket.isEmpty()) {
                     //进行等待
-                    try {
-                        basket.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    basket.wait();
                 }
+
                 System.out.println("生产者生成线程" + new Date());
                 basket.setEmpty(false);
-                basket.notify();//线程的通知唤醒
+                // 线程的通知唤醒
+                basket.notify();
             }
-            //睡眠线程在外，不影响cpu的消耗
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            // 睡眠线程在外，不影响cpu的消耗
+            Thread.sleep(1000);
 
         }
-
     }
 }

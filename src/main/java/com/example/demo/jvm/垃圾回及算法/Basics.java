@@ -20,7 +20,7 @@ public class Basics {
      * 答：
      *（1）、where/which
      *（2）、whern
-     * (3)、how
+     *（3）、how
      *
      *
      *

@@ -1,4 +1,4 @@
-package com.example.demo.javax0.设计模型;
+package com.example.demo.javax0.设计模型.模式练习;
 
 import java.util.HashMap;
 import java.util.Map;

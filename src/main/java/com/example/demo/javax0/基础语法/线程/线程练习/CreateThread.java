@@ -21,7 +21,7 @@ public class CreateThread {
      * 2、重写run方法
      */
     static class threadCreate extends Thread {
-        //重写线程命名
+        // 重写线程命名
         private String name;
 
         public threadCreate(String name) {
@@ -30,10 +30,11 @@ public class CreateThread {
 
         @Override
         public void run() {
-            //线程的主运行逻辑
+            // 线程的主运行逻辑
             System.out.println(name + "线程下载");
         }
     }
+
 
     /**
      * 二：Runnable创建线程方式
@@ -41,7 +42,7 @@ public class CreateThread {
      * 2、必须覆盖重写run的接口
      */
     static class runAbleCreate implements Runnable {
-        //重写线程命名
+        // 重写线程命名
         private String name;
 
         public runAbleCreate(String name) {
@@ -59,15 +60,15 @@ public class CreateThread {
 
     //测试线程类代码
     public static void main(String[] args) {
-        //一：
+        // 一：
         threadCreate threadCreate1 = new threadCreate("线程1");
         threadCreate threadCreate2 = new threadCreate("线程2");
-        //threadCreate1.run();//注意调用run方法，是并行执行的
-        //应该调用线程的start方法才是启动线程
+        // threadCreate1.run();//注意调用run方法，是并行执行的
+        // 应该调用线程的start方法才是启动线程
         threadCreate1.start();
         threadCreate2.start();
 
-        //二：
+        // 二：
         Thread thread1 = new Thread(new runAbleCreate("线程1"));
         Thread thread2 = new Thread(new runAbleCreate("线程2"));
         thread1.start();

@@ -1,4 +1,4 @@
-package com.example.demo.project.自定义注解.注解过滤接口;
+package com.example.demo.project.自定义注解.过滤接口;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class LoginController {
 
-
+    @NotLogin
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public void login(@RequestParam String userName, @RequestParam String password) {
         System.out.println("userName:" + userName + "password:" + password);

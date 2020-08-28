@@ -10,33 +10,32 @@ public class SingleModelSyn {
 
     /**
      * 改进：多个线程加载，创建多个实例,以及线程锁开销
-     *
      */
     private String name;
     private String age;
 
     private static SingleModelSyn singleModel;
 
-    //私有化构造器:
+    // 私有化构造器:
     private SingleModelSyn() {
 
     }
 
-    //创建外部访问对象
+    // 创建外部访问对象
     public static SingleModelSyn getInstance() {
-        //解决线程上下文切换，所产生的时间开销
+        // 解决线程上下文切换，所产生的时间开销
         if (singleModel == null) {
-            //加锁线程锁，解决多线程创建多个实例
+            // 加锁线程锁，解决多线程创建多个实例
             synchronized (SingleModelSyn.class) {
                 if (singleModel == null) {
-                    //懒加载
+                    // 懒加载
                     return new SingleModelSyn();
                 }
             }
         }
         return singleModel;
     }
-    /*//饿汉模式：以空间换时间做法
+    /*// 饿汉模式：以空间换时间做法
     private static SingleModelProSyn singleModel = new SingleModelProSyn();
 
     private SingleModelProSyn() {
