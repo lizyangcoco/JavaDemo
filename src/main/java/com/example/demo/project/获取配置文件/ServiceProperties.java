@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @Created by 李泽阳 @on 2020/8/28 17:22
  */
 @Component
-@ConfigurationProperties(prefix = "service")
+@ConfigurationProperties(prefix = "server")
 @Data
 public class ServiceProperties {
     private String address;
