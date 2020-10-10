@@ -40,7 +40,7 @@ public class cc {
     }
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             test sql = new test();
             System.out.println(sql.toString());
@@ -48,13 +48,13 @@ public class cc {
             System.out.println(sql.hashCode());
         }
         System.out.println("结束！！！");
-      /*  for (int i = 0; i <5 ; i++) {
+      *//*  for (int i = 0; i <5 ; i++) {
             StringBuffer sql=new StringBuffer();
             System.out.println(sql.toString());
             System.identityHashCode(sql);
-        }*/
+        }*//*
 
-    }
+    }*/
 
     // 测试返回，判空处理
     private String testOptional(DemoEntity demoEntity) throws Exception {
@@ -65,6 +65,23 @@ public class cc {
         return Optional.ofNullable(demoEntity).map(DemoEntity::getDeName).orElse(null);
 
 
+    }
+
+    private void get() {
+
+    }
+
+    public static void main(String[] args) {
+        List<String> stringList = new ArrayList<>();
+        stringList.add("1");
+        stringList.add("2");
+        stringList.add("3");
+        stringList.add("4");
+        Iterator<String> iterator = stringList.iterator();
+        while (iterator.hasNext()) {
+            iterator.remove();
+        }
+        System.out.println(stringList);
     }
 
 
