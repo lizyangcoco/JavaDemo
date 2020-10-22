@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Map;
 
 /**
+ * @author HUAWEI
  * @description：文件上传
  * @Created by 李泽阳 @on 2020/9/11 18:55
  */
@@ -19,14 +20,9 @@ public class UploadController {
     /**
      * 向本地服务上传文件
      */
-public Map<String,Object>
-
-
-
-
-
-
-
+    public Map<String, Object> upload() {
+        return null;
+    }
 
 
 }
