@@ -5,11 +5,11 @@ import lombok.Data;
 import java.util.logging.Logger;
 
 /**
+ * @author by 李泽阳 @on 2020/8/28 10:14
  * @description：
- * @Created by 李泽阳 @on 2020/8/28 10:14
  */
 @Data
-public class BusinessException  extends RuntimeException{
+public class BusinessException extends RuntimeException {
     private Integer code;
     private String mes;
     private Logger logger;
@@ -17,6 +17,7 @@ public class BusinessException  extends RuntimeException{
     public BusinessException() {
 
     }
+
     public BusinessException(Integer code, String mes) {
         this.code = code;
         this.mes = mes;
@@ -45,7 +46,6 @@ public class BusinessException  extends RuntimeException{
         this.code = code;
         this.mes = mes;
     }
-
 
 
 }
