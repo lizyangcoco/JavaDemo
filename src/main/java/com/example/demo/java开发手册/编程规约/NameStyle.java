@@ -118,6 +118,77 @@ public class NameStyle {
      * 正例：代码逻辑分清红花和绿叶，个性和共性，绿叶逻辑单独出来成为额外方法，使主干代码更加清晰； 共性逻辑抽取成为共性方法，便于复用和维护。
      *
      *
+     * fixme：04[推荐] 不同逻辑、不同语义、不同业务的代码之间插入一个空行分隔开来以提升可读性
+     * 说明：任何情形，没有必要插入多个空行进行隔开
+     *
+     *
+     * FIXME：四OOP规约
+     * fixme：01[强制] 避免通过一个类的对象引用访问此类的静态变量方法，直接用类名来访问
+     *
+     * fixme：02[强制] 所有的覆写的方法，必须加@Override注解
+     *
+     * fixme：03[强制] 相同参数类型，相同业务含义，才可以使用java的可变参数，避免object
+     * 说明：可变参数必须放置在参数列表的最后（不提议使用
+     * 正例：：public List<User> listUsers(String type, Long... ids) {...}
+     *
+     * fixme：04[强制] 外部正在使用的二方库依赖接口，不允许修改签名，避免对接口调用方产生影响
+     * 说明：接口过时必须添加 @Deprecated注解，并清晰的说明新接口或者新服务
+     *
+     * fixme：05[强制] 不能使用过时的类方法
+     *
+     * fixme：06[强制] Object的equals方法容易指出空指针异常，用确定值进行调取equals
+     * 正例："test".equals(Object)
+     * 反例：Object.equals("test")
+     *
+     * fixme：07[强制] 所有整型包装类对象之间值的比较，全部使用equals比较
+     * 说明：对于Integer var=？在-127至128之间范围内
+     * == 为true，超过范围则为false
+     * ，Integer 对象是在 IntegerCache.cache 产 生，会复用已有对象，这个区间内的 Integer 值可以直接使用==进行判断
+     * ，但是这个区间之外的所有数 据，都会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使用 equals方法进行判断。
+     *
+     * fixme：08[强制] 浮点之间的等值判断，基本数据类型不能用==来比较，包装类型不能用equals判断
+     * 反例：
+     * float a = 1.0f - 0.9f;
+     * float b = 0.9f - 0.8f;
+     * if(a==b){
+     *            // 预期进入此代码快，执行其它业务逻辑
+     *            // 但事实上 a==b 的结果为false
+     * }
+     *
+     *    Float x = Float.valueOf(a);
+     *    Float y = Float.valueOf(b);
+     *    if (x.equals(y)) {
+     *      // 预期进入此代码快，执行其它业务逻辑
+     *      // 但事实上 equals 的结果为false
+     *    }
+     *
+     * 正例：
+     * 指定误差范围
+     * float a = 1.0f - 0.9f;
+     * float b = 0.9f - 0.8f;
+     * float diff = 1e-6f;
+     *
+     *  if (Math.abs(a - b) < diff) {
+     *  // 相差在误差范围内，便返回true
+     *      System.out.println("true");
+     *  }
+     *
+     *  使用BigDecimal来定义值，再使用浮点数进行运算
+     *      BigDecimal a = new BigDecimal("1.0");
+     *      BigDecimal b = new BigDecimal("0.9");
+     *      BigDecimal c = new BigDecimal("0.8");
+     *      BigDecimal x = a.subtract(b);
+     *      BigDecimal y = b.subtract(c);
+     *      if (x.equals(y)) {
+     *      System.out.println("true");
+     *      }
+     *
+     * fixme：09[强制] 定义数据对象DO类时，属性类型要与数据库字段类型匹配
+     * 正例：数据库字段的 bigint 必须与类属性的 Long 类型相对应
+     * 
+     *
+     *
+     *
      */
 
 
