@@ -185,7 +185,21 @@ public class NameStyle {
      *
      * fixme：09[强制] 定义数据对象DO类时，属性类型要与数据库字段类型匹配
      * 正例：数据库字段的 bigint 必须与类属性的 Long 类型相对应
-     * 
+     *
+     * fixme：10[强制] 为了防止精度损失，禁止使用构造方法 BigDecimal(double)的方式把double值转 化为 BigDecimal对象。
+     * 说明：：BigDecimal g = new BigDecimal(0.1f); 实际的存储值为：0.10000000149
+     * 正例：：优先推荐入参为 String 的构造方法，或使用 BigDecimal的valueOf 方法，此方法内部其实执行了 Double的toString，而 Double 的toString 按double 的实际能表达的精度对尾数进行了截断。
+     *  BigDecimal recommend1 = new BigDecimal("0.1");
+     *  BigDecimal recommend2 = BigDecimal.valueOf(0.1);
+     *
+     * fixme：11[强制]
+     * 所有的 POJO类属性必须使用包装数据类型，
+     * RPC 方法的返回值和参数必须使用包装数据类型，所有的局部变量使用基本数据类型。
+     *
+     * fixme：12[强制] 定义DO/DTO/VO等POJO类时，不要设定任何属性默认值
+     * 反例：POJO类的createTime 默认值为new Date()，但是这个属性在数据提取时并没有置入具体值，在 更新其它字段时又附带更新了此字段，导致创建时间被修改成当前时间。
+     *
+     * fixme：13[强制] 构造方法里面禁止加入任何业务逻辑，如果有初始化逻辑，请放在 init方法
      *
      *
      *
