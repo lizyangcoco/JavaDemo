@@ -98,7 +98,7 @@ public class CheckTest {
         List<Mouse> mouseList = paramsBo.getMouseList();
         List<Bottle> bottleList = paramsBo.getBottleList();
 
-        Integer code = 0;
+        Integer code;
         List<?> list = groupByBisection(bottleList);
         while (true) {
             // 有毒的瓶子
@@ -120,7 +120,7 @@ public class CheckTest {
             bottleList2.stream().forEach(bottle -> tube2.absorb(bottle.getBane()));
 
             // 获取一个存活列表内的小白鼠
-            Mouse mouse0 = null;
+            Mouse mouse0;
             mouse0 = mouseList.stream().filter(mouse -> mouse.getLive().equals(true)).collect(Collectors.toList()).get(0);
             // 试毒
             mouse0.tryBane(tube1.getBane());
@@ -145,7 +145,7 @@ public class CheckTest {
         if (list.size() == 1) {
             return list;
         }
-        List result = new ArrayList();
+        List<Object> result = new ArrayList<>(10);
         // 二分起始坐标
         int startBound = 0;
         // 二分终止坐标
@@ -170,20 +170,18 @@ public class CheckTest {
 
 
     public static void main(String[] args) {
+
         long sTimePZhao = System.currentTimeMillis();
         Integer code1 = oneByOne();
         long eTimePZhao = System.currentTimeMillis();
         System.out.println("oneByOne__有毒瓶子编号为：：" + code1);
         System.out.println("oneByOne的时间查询节点为：：" + (eTimePZhao - sTimePZhao));
 
-
         long sTimeCG = System.currentTimeMillis();
         Integer code2 = binarySearch();
         long eTimeCG = System.currentTimeMillis();
         System.out.println("chenGaoCan__有毒瓶子编号为：：" + code2);
         System.out.println("chenGaoCan__的时间查询节点为：：" + (eTimeCG - sTimeCG));
-
-
 
     }
 }
