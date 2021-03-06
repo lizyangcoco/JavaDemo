@@ -6,7 +6,7 @@ import com.example.demo.utils.KeyValue;
  * @author by 李泽阳 @on 2020/12/1 17:42
  * @description:折扣率
  */
-public enum Discount implements KeyValue {
+public enum DiscountEnum implements KeyValue {
 
     DISCOUNT_ONE(1, "一折"),
     DISCOUNT_TWO(2, "二折"),
@@ -14,14 +14,14 @@ public enum Discount implements KeyValue {
     DISCOUNT_FOUR(4, "四折"),
     ;
 
-    Discount(Integer code, String msg) {
+    DiscountEnum(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
     public static String getMsg(Integer code) {
-        Discount[] discounts = Discount.values();
-        for (Discount discount: discounts) {
+        DiscountEnum[] discountEnums = DiscountEnum.values();
+        for (DiscountEnum discountEnum : discountEnums) {
 
         }
         return "";
