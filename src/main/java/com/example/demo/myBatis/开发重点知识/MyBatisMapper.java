@@ -1,5 +1,9 @@
 
-package com.example.demo.myBatis.开发重点知识;import org.springframework.data.repository.query.Param;
+package com.example.demo.myBatis.开发重点知识;
+
+import com.example.demo.dao.model.JsonUser;
+import org.springframework.data.repository.query.Param;
+
 import java.util.List;
 import java.util.Map;
 
@@ -12,10 +16,10 @@ public interface MyBatisMapper {
     /**
      * 单参数传递
      *
-     * @param t1 单个参数
+     * @param hasDelete 单个参数
      * @return
      */
-    List<Object> getListToParams(@Param("t1") String t1);
+    List<JsonUser> getListToParams(@Param("hasDelete") Integer hasDelete);
 
     /**
      * map参数传递
@@ -23,7 +27,7 @@ public interface MyBatisMapper {
      * @param paramsMap map参数
      * @return
      */
-    List<Object> getListToMap(Map<String, Object> paramsMap);
+    List<JsonUser> getListToMap(Map<String, Object> paramsMap);
 
     /**
      * bean对象参数传递
@@ -31,6 +35,14 @@ public interface MyBatisMapper {
      * @param paramsBean bean 参数
      * @return
      */
-    List<Object> getListToBean(Object paramsBean);
+    List<JsonUser> getListToBean(Object paramsBean);
+
+    /**
+     * 嵌套查询结果
+     *
+     * @return
+     */
+    List<JsonUser> getListByOtherSql();
+
 
 }
