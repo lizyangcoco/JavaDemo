@@ -9,7 +9,7 @@ import java.util.List;
  * @author by 李泽阳 @on 2021/3/21 22:38
  * @description:
  */
-public class MyBatis2骨架 {
+    public class MyBatis2骨架 {
     @Autowired
     private MyBatisMapper myBatisMapper;
 

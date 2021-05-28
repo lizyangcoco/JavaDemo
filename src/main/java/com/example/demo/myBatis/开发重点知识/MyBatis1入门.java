@@ -1,5 +1,6 @@
 package com.example.demo.myBatis.开发重点知识;
 
+import com.example.demo.annotation.Annotation;
 import com.example.demo.dao.model.JsonUser;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -32,7 +33,6 @@ public class MyBatis1入门 {
      * 0、嵌套结果（两个表的结果在一起），嵌套查询（多次查询）
      * 0、resultMap转为自定义的pojo 和 resultType转为现有的pojo
      */
-
     private void moreParams() {
         // 第一种map::禁止使用
         Map<String, Object> paramsMap = new HashMap<>(0);
